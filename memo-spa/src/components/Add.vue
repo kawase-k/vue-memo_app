@@ -1,32 +1,33 @@
 <template>
   <div>
     <h5>Add</h5>
-    <button v-if="!registerFlg" @click="toggleRegister">Add</button>
+    <button v-if="!addFlg" @click="registerMemo">＋</button>
 
-    <div v-if="registerFlg">
-      <textarea v-model="newMemo"></textarea>
-      <button @click="register">Reg</button>
+    <div v-if="addFlg">
+      <textarea v-model="newMemo" type="text" placeholder="Add new..."></textarea>
+      <button @click="addMemo">Add</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      registerFlg: false,
+      addFlg: false,
       newMemo: null
     }
   },
 
   methods: {
-    toggleRegister () {
-      this.registerFlg = !this.registerFlg
+    registerMemo() {
+      this.addFlg = !this.addFlg
     },
-    register () {
-      this.$emit('register', this.newMemo)
+
+    addMemo() {
+      this.$emit('add', this.newMemo)
+      this.addFlg = false
       this.newMemo = ''
-      this.registerFlg = false
     }
   }
 }
