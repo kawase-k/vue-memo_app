@@ -1,15 +1,14 @@
 <template>
   <div>
-    <h5>Format</h5>
-    <List :memos="this.memos" @transition="transitionToEdit"/>
     <Add @add="addMemo"/>
+    <List :memos="this.memos" @transition="transitionToEdit"/>
 
     <Form v-if="editFlg"
     :id="editingId"
     :memo="editingMemo"
     @editMemo="editMemo"
     @removeMemo="removeMemo"/>
-  </div>  
+  </div> 
 </template>
 
 <script>
@@ -92,9 +91,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-/* div{ */
-    /* border: 1px solid red */
-/* } */
-</style>

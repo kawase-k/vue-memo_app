@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h5>Add</h5>
-    <button v-if="!addFlg" @click="registerMemo">＋</button>
-
-    <div v-if="addFlg">
-      <textarea v-model="newMemo" type="text" placeholder="Add new..."></textarea>
-      <button @click="addMemo">Add</button>
+    <div class="text-end">
+      <button v-if="!addFlg" @click="registerMemo" type="button" class="btn btn-warning btn-lg">＋</button>
     </div>
+
+    <div v-if="addFlg" class="d-flex flex-row align-items-center">
+      <textarea v-model="newMemo" type="text" class="form-control me-3" id="exampleFormControlInput1" placeholder="Add new..."></textarea>
+      <button @click="addMemo" type="button" class="btn btn-primary">Add</button>
+    </div>
+    <hr class="my-4">
   </div>
 </template>
 
@@ -15,7 +17,7 @@ export default {
   data() {
     return {
       addFlg: false,
-      newMemo: null
+      newMemo: '新規メモ'
     }
   },
 
@@ -34,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-div{
-    border: 1px solid rgb(255, 0, 212) 
+.text-end {
+  margin: 20px;
 }
 </style>

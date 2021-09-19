@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <h5>Form</h5>
-    <textarea v-model="editingMemo" type="text" placeholder="New change..."></textarea>
-    <button @click="editMemo">Update</button>
-    <button @click="removeMemo">Delete</button>
+  <div class=form>
+    <div class="d-flex flex-row align-items-center">
+      <textarea v-model="editingMemo" type="text" class="form-control me-3" id="exampleFormControlInput1" placeholder="New change..."></textarea>
+      <button type="button" class="btn btn-success ms-1" @click="editMemo">Update</button>
+      <button type="button" class="btn btn-danger ms-1" @click="removeMemo">Delete</button>
+    </div>
   </div>
 </template>
 
@@ -49,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-div{
-    border: 1px solid green
+.form {
+  margin-top: 20px;
 }
 </style>
